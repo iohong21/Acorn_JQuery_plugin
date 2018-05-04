@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>	
+	<style>
+		.slider-for{
+			border: 1px solid red;
+		}
+		.slider-nav img{
+			width: 100px;
+			height: 100px;
+			margin: 0px 0px;
+		}
+	</style>
+</head>
+<body>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/slick.js"></script>
+
+	<div class="sbox">
+		<div class="slider slider-for">
+			<div><a href="#"><img src="images/image1.png"/></a></div>
+			<div><a href="#"><img src="images/image2.png"/></a></div>
+			<div><a href="#"><img src="images/image3.png"/></a></div>
+			<div><a href="#"><img src="images/image4.png"/></a></div>
+			<div><a href="#"><img src="images/image5.png"/></a></div>
+			<div><a href="#"><img src="images/image6.png"/></a></div>
+		</div>
+		<div class="slider slider-nav">
+			<div><img src="images/image1.png"/></div>
+			<div><img src="images/image2.png"/></div>
+			<div><img src="images/image3.png"/></div>
+			<div><img src="images/image4.png"/></div>
+			<div><img src="images/image5.png"/></div>
+			<div><img src="images/image6.png"/></div>
+		</div>
+	</div>
+	<script>
+		$('.slider-for').slick({
+			autoplay: true, //자동슬라이드
+			slidesToShow: 1, //큰이미지 몇개 보여줄것인지
+			slidesToScroll: 1,
+			autoplaySpeed: 1000,
+			speed: 500,
+			arrows: true,
+			fade: false,
+			dots: true,
+			centerMode: true,
+			asNavFor: '.slider-nav'
+		});
+ 		$('.slider-nav').slick({
+			slidesToShow: 5, //작은이미지 몇개 보여줄것인지..
+			slidesToScroll: 1,
+			centerMode: true,
+			asNavFor: '.slider-for',
+			focusOnSelect: true,
+       });
+	</script>
+</body>
+</html>
